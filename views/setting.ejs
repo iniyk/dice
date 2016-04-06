@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<div id="headerwrap">
+    <div class="container">
+        <div class="col-md-6 col-md-offset-3">
+            <% if (info != "") {%>
+                <div class="alert alert-<%= style %>" role="alert"><%= info %></div>
+            <% } %>
+            <form action="/setting" method="post">
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="管理员密码">
+                </div>
+                <div class="form-group">
+                    <label for="number">参赛组数</label>
+                    <input type="number" class="form-control" id="number" name="number" placeholder="参赛组数">
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" id="reset" name="reset">重置
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-warning">提交</button>
+            </form>
+            <a href="/list">查看所有队伍</a>
+        </div><!-- /row -->
+    </div><!-- /container -->
+</div><!-- /headerwrap -->
+</body>
+<script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="/javascripts/list.js"></script>
+</html>

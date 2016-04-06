@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-4">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>队伍名</th>
+                            <th>题目号</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for (var team of teams) {%>
+                            <tr>
+                                <td><%= team.name %></td>
+                                <td><%= team.problem %></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                    <tfoot>
+                        <a href="/">返回</a>
+                    </tfoot>
+                </table>
+            </div><!-- /col-lg-6 -->
+            <div class="col-lg-4">
+                <img class="img-responsive pull-right" src="/images/books.jpeg" alt="" style="height: 700px">
+            </div><!-- /col-lg-6 -->
+            <div class="col-lg-2"></div>
+        </div><!-- /row -->
+    </div><!-- /container -->
+</body>
+<script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="/javascripts/list.js"></script>
+</html>

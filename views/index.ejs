@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-4">
+                <div class="container">
+                    <div class="row" style="height: 100px">
+                    </div>
+                    <h1 style="font-size: 72px">书库寻宝</h1>
+                    <div class="row" style="height: 100px">
+                    </div>
+                    <div class="row" id="main">
+                        <form class="form-inline" role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control input-lg" id="name"
+                                       placeholder="请输入队伍名称">
+                            </div>
+                            <a class="btn btn-warning btn-lg" id="submit">抽取题目!</a>
+                        </form>
+                        <a href="/list">查看其它队伍</a>
+                    </div>
+                </div>
+            </div><!-- /col-lg-6 -->
+            <div class="col-lg-4">
+                <img class="img-responsive pull-right" src="/images/books.jpeg" alt="" style="height: 700px">
+            </div><!-- /col-lg-6 -->
+            <div class="col-lg-2"></div>
+        </div><!-- /row -->
+    </div><!-- /container -->
+</body>
+<script src="http://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="/javascripts/index.js"></script>
+</html>
