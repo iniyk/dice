@@ -66,20 +66,24 @@ router.post('/setting', function(req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
-    if (problem_list.length > 0) {
-        if (team_set.has(req.body.name)) {
-            res.json({err: '您的队伍已经抽取过题目'});
+    if (req.body.name.length > 0) {
+        if (problem_list.length > 0) {
+            if (team_set.has(req.body.name)) {
+                res.json({err: '您的队伍已经抽取过题目'});
+            } else {
+                var team = {
+                    name: req.body.name,
+                    problem: problem_list.pop() + 1
+                };
+                result.push(team);
+                team_set.add(req.body.name);
+                res.json(team);
+            }
         } else {
-            var team = {
-                name: req.body.name,
-                problem: problem_list.pop() + 1
-            };
-            result.push(team);
-            team_set.add(req.body.name);
-            res.json(team);
+            res.json({err: '没有更多题目了'});
         }
     } else {
-        res.json({err: '没有更多题目了'});
+        res.json({err: '队名不能为空'});
     }
 });
 
